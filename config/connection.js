@@ -1,11 +1,10 @@
 require('dotenv').config();
 
-const hostname = process.env.HOST;
+const hostname = process.env.DBHOST;
 const database = process.env.DATABASE;
-const dbport = process.env.PORT;
-const dbuser = process.env.USER;
-const dbpass = process.env.PASS;
-
+const dbport = process.env.DBPORT;
+const dbuser = process.env.DBUSER;
+const dbpass = process.env.DBPASS;
 
 var mysql = require("mysql");
 
@@ -17,7 +16,6 @@ var connection = mysql.createConnection({
   database: database
 });
 
-// Make connection.
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
@@ -26,5 +24,4 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-// Export connection for our ORM to use.
 module.exports = connection;
