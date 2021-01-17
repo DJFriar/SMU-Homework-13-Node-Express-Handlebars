@@ -8,13 +8,20 @@ const dbpass = process.env.DBPASS;
 
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-  host: hostname,
-  port: dbport,
-  user: dbuser,
-  password: dbpass,
-  database: database
-});
+var connection; 
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: hostname,
+    port: dbport,
+    user: dbuser,
+    password: dbpass,
+    database: database
+  });
+};
+
 
 connection.connect(function(err) {
   if (err) {
