@@ -1,4 +1,5 @@
-body {
+body, html {
+  height: 100%;
   background-color: #F4C86B;
 }
 
@@ -10,7 +11,7 @@ li {
   padding: 5px;
   margin: 5px;
   list-style-type: none;
-  /* background: #faebd7; */
+  color: #000;
 }
 
 .label {
@@ -25,4 +26,28 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.uk-button-default {
+  border-color: #000;
+}
+
+.uk-radio:checked {
+  background-color:#000;
+}
+
+.uk-radio:not(:disabled) {
+  border-color: #000;
+
+}
+
+li .uk-button-default {
+  color: #666;
+  border: 0;
+  padding: 0px 5px 5px 5px;
+}
+
+.burger-name {
+  font-size: 1.2em;
+  font-weight: 600;
 }

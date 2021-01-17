@@ -1,10 +1,8 @@
 <li>
   <button class="uk-button uk-button-default delete-burger" data-id="{{this.id}}"><span class="fas fa-trash"></span></button>
-	{{name}}
+	<span class="burger-name">{{name}}</span>
 
 	<button class="uk-button uk-button-default change-status" data-id="{{id}}" data-newstatus="{{devoured}}">
-		{{#if devoured}}DEVOUR IT!{{else}}THROW UP{{/if}}
+		{{#if devoured}}<span class="fas fa-utensils"> Chow Down</span>{{else}}<span class="fas fa-poop"> Return</span>{{/if}}
 	</button>
-
-	
 </li>
